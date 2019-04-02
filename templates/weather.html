@@ -3,30 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My weather App</title>
+  <title>CC Assignment</title>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  
 
 </head>
-<body>
-<div id="top">
-<h1 align="center">Cincinnati Weather</h1>
+<body style="background-color:lightcyan;">
+<div>
+<h1 align="center">Weather Forecast</h1>
 </div>
-<div id="container">
-
+<div id="container" style="padding:30px;">
   <form id="contact"  name="contact" method="GET" action="/forecast/">
-  <h3>Select a date</h3>
+  <div class="panel panel-info">
+      <div class="panel-heading">Select a date</div>
+      <div class="panel-body">  <p><input type="date" id="date" value="date"/></p>
 
-  <p><input type="date" id="date" value="date"/></p>
-
-    <input type="submit" id="btn" value="Get Forecast"  class="button"/>
-    <br>
-    <div id="chartContainer" style="height: 370px; width: 55%;padding-left:10%;"></div>
-  <div id="chartContainer2" style="height: 370px; width: 55%;padding-left:10%;"></div>
+    <input type="submit" id="btn" value="Submit"  class="button"/></div>
+    </div>
+    <div id="chartContainer" style="height: 370px; width: 80%;padding:30px;"></div>
+  <div id="chartContainer2" style="height: 370px; width: 80%;padding:50px"></div>
     </form> 
  </div>
 
@@ -39,7 +40,7 @@ form.submit(function() {
             var month = da.substring(5, 7);
             var day = da.substring(8, 10);
             var fd = year + month + day;
-     var temp = 'http://ec2-3-16-181-53.us-east-2.compute.amazonaws.com:8001/forecast/';
+     var temp = 'http://ec2-3-16-181-53.us-east-2.compute.amazonaws.com/forecast/';
      var lookurl = temp+fd;
 $.ajax({
   type: form.attr("method"),
