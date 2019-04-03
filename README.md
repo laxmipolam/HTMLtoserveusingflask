@@ -13,7 +13,7 @@ Used ajax calls (jquery) for for serving GET and Post requests.
 
 Used Bootstrap 4 to place html form in a panel.
 
-HTML hosted using python on AWS EC2
+HTML hosted using python on AWS EC2 using gunicorn and nginx
 
 Functionality:
 
